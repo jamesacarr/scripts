@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Setup git
+ssh-keygen -t rsa -b 4096 -C "carrgo001@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+pbcopy < ~/.ssh/id_rsa.pub
+
+read -p "Press [Enter] once the ssh key has been added to GitHub..."
+
+# Install Homebrew and brews
+if [[ -z $(which brew) ]]; then
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+brew update
+brew install autojump
+brew install gpg-agent
+brew install git-crypt
+brew install httpie
+brew install hub
+brew install node
+brew install macvim
+brew install sshpass
+brew install zsh
+brew install zsh-syntax-highlighting
+
+# Pull down prezto config
+git clone --recursive https://github.com/carrgo/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+cd "${ZDOTDIR:-$HOME}/.zprezto"
+git-crypt unlock
+
+# Change shell to zsh
+sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+
+echo "Setup complete. Please restart your terminal to get all the ZSH goodness."

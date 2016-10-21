@@ -14,6 +14,8 @@ if [[ -z $(which brew) ]]; then
 fi
 brew update
 brew install autojump
+brew install awscli
+brew install git
 brew install gpg-agent
 brew install git-crypt
 brew install httpie
@@ -21,6 +23,7 @@ brew install hub
 brew install node
 brew install macvim
 brew install sshpass
+brew install yarn
 brew install zsh
 brew install zsh-syntax-highlighting
 

@@ -1,13 +1,13 @@
 #!/bin/bash
 
 # Setup git
-echo "Creating GitHub SSH Key"
-ssh-keygen -t rsa -b 4096 -C "carrgo001@gmail.com"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-pbcopy < ~/.ssh/id_rsa.pub
+# echo "Creating GitHub SSH Key"
+# ssh-keygen -t rsa -b 4096 -C "carrgo001@gmail.com"
+# eval "$(ssh-agent -s)"
+# ssh-add ~/.ssh/id_rsa
+# pbcopy < ~/.ssh/id_rsa.pub
 
-read -p "Press [Enter] once the ssh key has been added to GitHub..."
+# read -p "Press [Enter] once the ssh key has been added to GitHub..."
 
 # Install Homebrew and brews
 echo "Installing Homebrew & brews"
@@ -18,6 +18,7 @@ brew update
 brew install autojump
 brew install awscli
 brew install git
+Brew install gpg
 brew install gpg-agent
 brew install git-crypt
 brew install httpie
@@ -46,7 +47,7 @@ gem install bundler
 echo "Pull down Prezto & config"
 git clone --recursive https://github.com/carrgo/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 cd "${ZDOTDIR:-$HOME}/.zprezto"
-git-crypt unlock
+# git-crypt unlock
 
 # Change shell to zsh
 echo "Changing shell"

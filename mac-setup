@@ -23,14 +23,15 @@ brew install gpg-agent
 brew install git-crypt
 brew install httpie
 brew install hub
-brew install node
 brew install macvim
+brew install node
 brew install postgresql
+brew install python
+brew install python3
 brew install rbenv
 brew install redis
 brew install ruby-build
 brew install sshpass
-brew install yarn
 brew install zsh
 brew install zsh-syntax-highlighting
 

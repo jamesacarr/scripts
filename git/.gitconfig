@@ -1,0 +1,22 @@
+[user]
+	name = James Carr
+	email = carrgo001@gmail.com
+	signingkey = F7B129A6
+
+[core]
+	excludesfile = ~/.gitignore_global
+
+[push]
+	default = upstream
+
+[commit]
+	gpgsign = true
+
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+
+[rerere]
+	enabled = true
+	autoupdate = true

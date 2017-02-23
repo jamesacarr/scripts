@@ -6,6 +6,7 @@
     telemetryConsent: "no"
   editor:
     atomicSoftTabs: false
+    showIndentGuide: true
     tabType: "soft"
   "exception-reporting":
     userId: "436a734e-d9cf-9f6f-253a-00294e50d652"
@@ -14,6 +15,8 @@
       "go-signature-statusbar"
     ]
     panelDisplayMode: "closed"
+  "language-babel":
+    autoIndentJSX: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "package-sync":
@@ -21,6 +24,3 @@
     forceOverwrite: true
   welcome:
     showOnStartup: false
-".coffee.jsx.source":
-  editor:
-    autoIndentOnPaste: false

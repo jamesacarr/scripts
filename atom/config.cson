@@ -1,0 +1,21 @@
+"*":
+  "atom-beautify":
+    general:
+      analytics: false
+  core:
+    telemetryConsent: "no"
+  editor:
+    atomicSoftTabs: false
+    tabType: "soft"
+  "exception-reporting":
+    userId: "436a734e-d9cf-9f6f-253a-00294e50d652"
+  "go-plus":
+    disabledBundledPackages: [
+      "go-signature-statusbar"
+    ]
+    panelDisplayMode: "closed"
+  welcome:
+    showOnStartup: false
+".coffee.jsx.source":
+  editor:
+    autoIndentOnPaste: false

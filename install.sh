@@ -3,11 +3,16 @@
 export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Update dotfiles before continuing
+echo "Checking for latest dotfiles version"
 [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
 # Symlinks
+echo "Copying symlinks"
 ln -sfv "$DOTFILES_DIR/git/.gitconfig" ~
 ln -sfv "$DOTFILES_DIR/git/.gitignore_global" ~
+
+mkdir -p ~/.atom
+ln -sfv $DOTFILES_DIR/atom/* ~/.atom
 
 # Installers
 . "$DOTFILES_DIR/install/brew.sh"

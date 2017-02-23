@@ -14,6 +14,11 @@
       "go-signature-statusbar"
     ]
     panelDisplayMode: "closed"
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+  "package-sync":
+    createOnChange: true
+    forceOverwrite: true
   welcome:
     showOnStartup: false
 ".coffee.jsx.source":

@@ -19,6 +19,7 @@ packages=(
   git
   git-crypt
   gnupg2
+  go
   httpie
   hub
   macvim

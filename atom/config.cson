@@ -17,6 +17,8 @@
     panelDisplayMode: "closed"
   "language-babel":
     autoIndentJSX: true
+  "linter-eslint":
+    fixOnSave: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "package-sync":

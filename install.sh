@@ -18,5 +18,4 @@ ln -sfv $DOTFILES_DIR/atom/* ~/.atom
 . "$DOTFILES_DIR/install/rbenv.sh"
 . "$DOTFILES_DIR/install/zsh.sh"
 
-
 echo "Setup complete. Please restart your terminal to get all the ZSH goodness."

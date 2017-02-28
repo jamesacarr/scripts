@@ -22,6 +22,8 @@
     fixOnSave: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
+  "linter-xo":
+    fixOnSave: true
   "package-sync":
     createOnChange: true
     forceOverwrite: true

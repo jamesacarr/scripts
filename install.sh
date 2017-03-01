@@ -18,4 +18,9 @@ ln -sfv $DOTFILES_DIR/atom/* ~/.atom
 . "$DOTFILES_DIR/install/rbenv.sh"
 . "$DOTFILES_DIR/install/zsh.sh"
 
+EXTRA_DIR="$HOME/.extra"
+if [ -d "$EXTRA_DIR" -a -f "$EXTRA_DIR/install.sh" ]; then
+  . "$EXTRA_DIR/install.sh"
+fi
+
 echo "Setup complete. Please restart your terminal to get all the ZSH goodness."

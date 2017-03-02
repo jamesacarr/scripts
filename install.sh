@@ -35,8 +35,8 @@ sub_extra() {
   fi
 }
 
-sub_macos () {
-  for DEFAULTS_FILE in "${DOTFILES_DIR}"/macos/defaults*.sh; do
+sub_macros () {
+  for DEFAULTS_FILE in "${DOTFILES_DIR}"/macros/defaults*.sh; do
     echo "Applying ${DEFAULTS_FILE}" && . "${DEFAULTS_FILE}"
   done
   echo "Done. Some changes may require a logout/restart to take effect."

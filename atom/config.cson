@@ -6,7 +6,7 @@
     telemetryConsent: "no"
   editor:
     atomicSoftTabs: false
-    preferredLineLength: 100
+    preferredLineLength: 120
     showIndentGuide: true
     tabType: "soft"
   "exception-reporting":

@@ -31,7 +31,6 @@ packages=(
   redis
   yarn
   zsh
-  zsh-syntax-highlighting
 )
 
 brew install "${packages[@]}"

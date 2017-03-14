@@ -1,5 +1,6 @@
 packages: [
   "autoclose-html"
+  "busy-signal"
   "file-icons"
   "go-debug"
   "go-plus"
@@ -7,6 +8,7 @@ packages: [
   "highlight-selected"
   "hyperclick"
   "intellij-idea-keymap"
+  "intentions"
   "js-hyperclick"
   "language-babel"
   "language-docker"
@@ -17,6 +19,7 @@ packages: [
   "linter-eslint"
   "linter-jsonlint"
   "linter-rubocop"
+  "linter-ui-default"
   "linter-xo"
   "package-sync"
   "sort-lines"

@@ -16,12 +16,14 @@
       "go-signature-statusbar"
     ]
     panelDisplayMode: "closed"
+    test: {}
   "language-babel":
     autoIndentJSX: true
   "linter-eslint":
     fixOnSave: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
+  "linter-ui-default": {}
   "linter-xo":
     fixOnSave: true
   "package-sync":

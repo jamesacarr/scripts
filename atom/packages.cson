@@ -1,5 +1,6 @@
 packages: [
   "autoclose-html"
+  "autocomplete-modules"
   "busy-signal"
   "file-icons"
   "go-debug"

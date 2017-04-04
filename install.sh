@@ -57,6 +57,9 @@ sub_symlinks () {
   echo "Creating atom symlinks"
   mkdir -p ~/.atom
   ln -sfv $DOTFILES_DIR/atom/* ~/.atom
+
+  echo "Creating hyper symlinks"
+  ln -sfv $DOTFILES_DIR/hyper/.hyper.js ~
   echo "Done."
 }
 

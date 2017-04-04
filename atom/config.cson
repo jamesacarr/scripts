@@ -16,7 +16,8 @@
       "go-signature-statusbar"
     ]
     panelDisplayMode: "closed"
-    test: {}
+    test:
+      coverageDisplayMode: "gutter"
   "language-babel":
     autoIndentJSX: true
   "linter-eslint":

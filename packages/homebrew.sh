@@ -17,7 +17,7 @@ packages=(
   awscli
   git
   git-crypt
-  gnupg2
+  gnupg
   go
   httpie
   hub

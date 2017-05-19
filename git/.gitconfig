@@ -1,7 +1,7 @@
 [user]
 	name = James Carr
 	email = carrgo001@gmail.com
-	signingkey = F7B129A6
+	signingkey = A79F57D8
 
 [core]
 	excludesfile = ~/.gitignore_global

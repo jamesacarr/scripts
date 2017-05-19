@@ -16,7 +16,6 @@ packages=(
   autojump
   awscli
   git
-  git-crypt
   gnupg
   go
   httpie
@@ -29,6 +28,7 @@ packages=(
   python3
   rbenv
   redis
+  watchman
   yarn
   zsh
 )

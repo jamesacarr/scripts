@@ -24,7 +24,8 @@
     fixOnSave: true
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   "linter-xo":
     fixOnSave: true
   "package-sync":

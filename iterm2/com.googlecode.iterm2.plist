@@ -527,17 +527,17 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1216 1480 445 77 0 1200 1920 1058 </string>
+	<string>1216 1346 445 77 0 1200 1920 1058 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>514 711 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 1699 620 392 0 1200 1920 1058 </string>
+	<string>650 590 620 392 0 0 1920 1178 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>472 1551 796 473 0 1200 1920 1058 </string>
+	<string>440 1631 796 473 0 1200 1920 1058 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 1673 592 584 0 1200 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 534 1920 644 0 0 1920 1178 </string>
+	<string>0 1614 1920 644 0 1200 1920 1058 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -1357,7 +1357,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-03-02T22:21:48Z</date>
+	<date>2017-05-17T22:13:23Z</date>
 	<key>ShowFullScreenTabBar</key>
 	<false/>
 	<key>SmartPlacement</key>
@@ -1368,8 +1368,12 @@
 	<real>1469664640</real>
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
+	<key>findIgnoreCase_iTerm</key>
+	<true/>
+	<key>findRegex_iTerm</key>
+	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.14</string>
+	<string>3.0.15</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

@@ -25,6 +25,7 @@
   "linter-jshint":
     disableWhenNoJshintrcFileInPath: true
   "linter-ui-default":
+    panelHeight: 69
     showPanel: true
   "linter-xo":
     fixOnSave: true

@@ -1,7 +1,8 @@
 #!/bin/bash
 
-echo "Cloning Prezto"
-git clone --recursive git@github.com:jamesacarr/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+echo "Cloning Prezto..."
+git clone --recursive git@github.com:jamesacarr/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" &> /dev/null
+echo "Prezto cloned"
 
 setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do

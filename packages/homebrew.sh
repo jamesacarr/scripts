@@ -1,16 +1,26 @@
 #!/bin/bash
 
+echo "Downloading Homebrew..."
 if [[ -z $(which brew) ]]; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &> /dev/null
 fi
+echo "Download complete"
 
-brew tap caskroom/cask
-brew tap homebrew/core
-brew tap homebrew/services
-brew tap homebrew/versions
+echo "Tapping brew casks..."
+{
+  brew tap caskroom/cask
+  brew tap homebrew/core
+  brew tap homebrew/services
+  brew tap homebrew/versions
+} &> /dev/null
+echo "Casks tapped"
 
-brew update
-brew upgrade
+echo "Updating Homebrew..."
+{
+  brew update
+  brew upgrade
+} &> /dev/null
+echo "Homebrew updated"
 
 packages=(
   autojump
@@ -33,5 +43,10 @@ packages=(
   zsh
 )
 
-brew install "${packages[@]}"
-brew install yarn --without-node
+echo "Installing ${packages[@]}..."
+brew install "${packages[@]}" &> /dev/null
+
+echo "Installing yarn..."
+brew install yarn --without-node &> /dev/null
+
+echo "Homebrew packages installed"

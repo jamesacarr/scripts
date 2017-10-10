@@ -1,8 +1,15 @@
 #!/bin/bash
 
 eval "$(rbenv init -)"
-rbenv install --skip-existing 2.4.2
-rbenv global 2.4.2
-rbenv rehash
 
-gem install bundler
+echo "Installing ruby..."
+{
+  rbenv install --skip-existing 2.4.2
+  rbenv global 2.4.2
+  rbenv rehash
+} &> /dev/null
+echo "Ruby installed"
+
+echo "Installing bundler..."
+gem install bundler &> /dev/null
+echo "Bundler installed"

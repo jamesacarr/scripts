@@ -1,8 +1,15 @@
 #!/bin/bash
 
 eval "$(nodenv init -)"
-nodenv install 8.6.0
-nodenv global 8.6.0
-nodenv rehash
 
-npm i -g npm
+echo "Installing node..."
+{
+  nodenv install 8.6.0
+  nodenv global 8.6.0
+  nodenv rehash
+} &> /dev/null
+echo "Node installed"
+
+echo "Updating NPM..."
+npm i -g npm &> /dev/null
+echo "NPM Updated"

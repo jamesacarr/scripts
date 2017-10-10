@@ -21,7 +21,8 @@ packages=(
   httpie
   hub
   macvim
-  node
+  nodeenv
+  nodenv/nodenv/nodenv-npm-migrate
   pinentry-mac
   postgresql
   python
@@ -29,8 +30,8 @@ packages=(
   rbenv
   redis
   watchman
-  yarn
   zsh
 )
 
 brew install "${packages[@]}"
+brew install yarn --without-node

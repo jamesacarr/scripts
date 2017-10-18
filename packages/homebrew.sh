@@ -31,8 +31,6 @@ packages=(
   httpie
   hub
   macvim
-  nodeenv
-  nodenv/nodenv/nodenv-npm-migrate
   pinentry-mac
   postgresql
   python
@@ -48,5 +46,8 @@ brew install "${packages[@]}" &> /dev/null
 
 echo "Installing yarn..."
 brew install yarn --without-node &> /dev/null
+
+echo "Installing nodenv"
+brew install nodeenv &> /dev/null
 
 echo "Homebrew packages installed"

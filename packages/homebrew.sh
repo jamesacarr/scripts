@@ -25,6 +25,7 @@ echo "Homebrew updated"
 packages=(
   autojump
   awscli
+  colordiff
   git
   gnupg
   go

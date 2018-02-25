@@ -13,8 +13,8 @@ echo "Plugins installed"
 
 echo "Installing node..."
 {
-  nodenv install 8.7.0
-  nodenv global 8.7.0
+  nodenv install 8.9.4
+  nodenv global 8.9.4
   nodenv rehash
 } &> /dev/null
 echo "Node installed"

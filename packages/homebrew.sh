@@ -25,17 +25,15 @@ echo "Homebrew updated"
 packages=(
   autojump
   awscli
-  colordiff
   git
   gnupg
-  go
   httpie
   hub
   macvim
   pinentry-mac
   postgresql
   python
-  python3
+  python@2
   rbenv
   redis
   watchman

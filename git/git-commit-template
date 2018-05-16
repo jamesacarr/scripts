@@ -1,0 +1,30 @@
+
+# <type>(<scope>): <subject>   Max 50 chars ---->|
+
+# COMMIT BODY                                        Max 72 chars ---->|
+
+
+# COMMIT FOOTER                                      Max 72 chars ---->|
+# BREAKING CHANGE: 
+# closes: #
+# see also: #
+
+# --- NOTES ---
+# Type can be:
+#    feat:      New feature
+#    fix:       Bug fix
+#    docs:      Documentation only changes
+#    style:     Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+#    refactor:  Code change that neither fixes a bug nor adds a feature
+#    perf:      Code change that improves performance
+#    test:      Adding missing or correcting existing tests
+#    chore:     Changes to the build process or auxiliary tools and libraries such as documentation generation
+# --------------------
+# Remember to:
+#    Capitalize the subject line
+#    Use the imperative mood in the subject line
+#    Do not end the subject line with a period
+#    Separate subject from body with a blank line
+#    Use the body to explain what and why vs. how
+#    Can use multiple lines with "-" for bullet points in body
+# --------------------

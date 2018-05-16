@@ -51,11 +51,12 @@ sub_packages () {
 
 sub_symlinks () {
   echo "Creating git symlinks"
-  ln -sfv $DOTFILES_DIR/git/.gitconfig ~
-  ln -sfv $DOTFILES_DIR/git/.gitignore_global ~
+  ln -sfv $DOTFILES_DIR/git/git-commit-template ~/.git-commit-template
+  ln -sfv $DOTFILES_DIR/git/gitconfig ~/.gitconfig
+  ln -sfv $DOTFILES_DIR/git/gitignore-global ~/.gitignore-global
 
   echo "Creating hyper symlinks"
-  ln -sfv $DOTFILES_DIR/hyper/.hyper.js ~
+  ln -sfv $DOTFILES_DIR/hyper/hyper.js ~/.hyper.js
   echo "Done."
 }
 

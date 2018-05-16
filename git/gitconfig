@@ -4,13 +4,14 @@
 	signingkey = A79F57D8
 
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore-global
 
 [push]
 	default = upstream
 
 [commit]
 	gpgsign = true
+	template = ~/.git-commit-template
 
 [filter "lfs"]
 	clean = git-lfs clean %f

@@ -5,5 +5,8 @@
 .idea
 .vscode
 
+# NPM
+.npmrc
+
 # Dependency directories
 node_modules/

@@ -55,8 +55,6 @@ sub_symlinks () {
   ln -sfv $DOTFILES_DIR/git/gitconfig ~/.gitconfig
   ln -sfv $DOTFILES_DIR/git/gitignore-global ~/.gitignore-global
 
-  echo "Creating hyper symlinks"
-  ln -sfv $DOTFILES_DIR/hyper/hyper.js ~/.hyper.js
   echo "Done."
 }
 

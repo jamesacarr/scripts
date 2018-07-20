@@ -28,7 +28,6 @@ packages=(
   git
   gnupg
   httpie
-  hub
   macvim
   pinentry-mac
   postgresql
@@ -47,6 +46,6 @@ echo "Installing yarn..."
 brew install yarn --without-node &> /dev/null
 
 echo "Installing nodenv"
-brew install nodeenv &> /dev/null
+brew install nodenv &> /dev/null
 
 echo "Homebrew packages installed"

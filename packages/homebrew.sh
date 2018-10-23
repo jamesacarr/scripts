@@ -18,12 +18,10 @@ packages=(
   gnupg
   go
   gobject-introspection
-  gpg-agent
   httpie
   macvim
   nodenv
   nodenv/nodenv/nodenv-npm-migrate
-  pinentry-mac
   postgresql
   python
   python@2

@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /usr/local/bin/zsh
 
 echo "Cloning Prezto..."
 git clone --recursive git@github.com:jamesacarr/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" &> /dev/null

@@ -21,3 +21,6 @@
 [rerere]
 	enabled = true
 	autoupdate = true
+
+[includeIf "gitdir:~/Git/zapier/"]
+	path = ~/.gitconfig-zapier

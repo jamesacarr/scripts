@@ -53,6 +53,7 @@ sub_symlinks () {
   echo "Creating git symlinks"
   ln -sfv $DOTFILES_DIR/git/git-commit-template ~/.git-commit-template
   ln -sfv $DOTFILES_DIR/git/gitconfig ~/.gitconfig
+  ln -sfv $DOTFILES_DIR/git/gitconfig-zapier ~/.gitconfig-zapier
   ln -sfv $DOTFILES_DIR/git/gitignore-global ~/.gitignore-global
 
   echo "Done."

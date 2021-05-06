@@ -14,20 +14,19 @@ echo "Homebrew updated"
 
 packages=(
   autojump
+  awscli
+  direnv
   git
-  gnupg
   go
-  gobject-introspection
   httpie
-  macvim
   nodenv
+  nodenv/nodenv/nodenv-aliases
   nodenv/nodenv/nodenv-npm-migrate
-  postgresql
-  python
-  python@2
+  pinentry
+  pinentry-mac
   rbenv
-  redis
   watchman
+  yarn
   zsh
 )
 

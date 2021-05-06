@@ -4,8 +4,8 @@ eval "$(nodenv init -)"
 
 echo "Installing node..."
 {
-  nodenv install 8.12.0 --skip-existing
-  nodenv global 8.12.0
+  nodenv install 12.18.3 --skip-existing
+  nodenv global 12.18.3
   nodenv rehash
 } &> /dev/null
 echo "Node installed"

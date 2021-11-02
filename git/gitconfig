@@ -24,3 +24,5 @@
 
 [includeIf "gitdir:~/Git/zapier/"]
 	path = ~/.gitconfig-zapier
+[init]
+	defaultBranch = main

@@ -12,6 +12,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
+#"Disabling system-wide resume"
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -23,8 +26,7 @@ defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 # Save to disk (not to iCloud) by default
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Reveal IP address, hostname, OS version, etc. when clicking the clock
-# in the login window
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # Automatically quit printer app once the print jobs complete
@@ -51,6 +53,9 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
+
+# Set default mouse speed
+defaults write -g com.apple.mouse.scaling 2.5
 
 ###############################################################################
 # Screen                                                                      #
@@ -81,13 +86,12 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Set Desktop as the default location for new Finder windows
+# Set Home as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
 defaults write com.apple.finder NewWindowTarget -string "PfLo"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
-# Always open everything in Finder's list view.
-# Use list view in all Finder windows by default
+# Use column view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 
@@ -110,29 +114,18 @@ defaults write com.apple.dock showhidden -bool true
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
 
+# Don’t automatically rearrange Spaces based on most recent use
+defaults write com.apple.dock mru-spaces -bool false
+
 ###############################################################################
 # Safari & WebKit                                                             #
 ###############################################################################
 
-# Privacy: don’t send search queries to Apple
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
-defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-
-# Press Tab to highlight each item on a web page
-defaults write com.apple.Safari WebKitTabToLinksPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2TabsToLinks -bool true
-
 # Show the full URL in the address bar (note: this still hides the scheme)
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true
 
-# Set Safari’s home page to `about:blank` for faster loading
-defaults write com.apple.Safari HomePage -string "about:blank"
-
 # Prevent Safari from opening ‘safe’ files automatically after downloading
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
-
-# Allow hitting the Backspace key to go to the previous page in history
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 # Enable Safari’s debug menu
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
@@ -166,12 +159,6 @@ defaults write com.apple.terminal "Startup Window Settings" -string "Pro"
 ###############################################################################
 # Mac App Store                                                               #
 ###############################################################################
-
-# Enable the WebKit Developer Tools in the Mac App Store
-defaults write com.apple.appstore WebKitDeveloperExtras -bool true
-
-# Enable Debug Menu in the Mac App Store
-defaults write com.apple.appstore ShowDebugMenu -bool true
 
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true

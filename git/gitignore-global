@@ -8,8 +8,5 @@
 # direnv
 .envrc
 
-# NPM
-.npmrc
-
 # Dependency directories
 node_modules/

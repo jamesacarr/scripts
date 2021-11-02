@@ -11,7 +11,6 @@ sub_help () {
   echo "Commands:"
   echo "   help             This help message"
   echo "   all              Installs macros, symlinks, packages and extras"
-  echo "   extras           Installs from files located in ~/.extra"
   echo "   macros           Apply macOS system defaults"
   echo "   packages         Installs package managers and packages"
   echo "   symlinks         Creates symlinks"
@@ -26,13 +25,6 @@ sub_all() {
   sub_packages
   sub_macros
   sub_extra
-}
-
-sub_extra() {
-  EXTRA_DIR="$HOME/.extra"
-  if [ -d "$EXTRA_DIR" -a -f "$EXTRA_DIR/install.sh" ]; then
-    . "$EXTRA_DIR/install.sh"
-  fi
 }
 
 sub_macros () {
@@ -61,7 +53,7 @@ sub_symlinks () {
 
 # Make sure to keep this in sync with the available public commands
 sub_completion () {
-  echo "help all extras macros packages symlinks"
+  echo "help all macros packages symlinks"
 }
 
 case $COMMAND_NAME in

@@ -1,9 +1,7 @@
 #!/bin/bash
 
 echo "Downloading Homebrew..."
-if [[ -z $(which brew) ]]; then
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" &> /dev/null
-fi
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" &> /dev/null
 echo "Download complete"
 
 echo "Updating Homebrew..."

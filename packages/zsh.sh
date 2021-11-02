@@ -10,4 +10,4 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 echo "Changing shell to zsh"
-sudo dscl . -create "/Users/$USER" UserShell /usr/local/bin/zsh
+chsh -s /bin/zsh

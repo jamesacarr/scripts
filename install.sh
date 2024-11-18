@@ -10,7 +10,7 @@ sub_help () {
   echo
   echo "Commands:"
   echo "   help             This help message"
-  echo "   all              Installs macros, symlinks, packages and extras"
+  echo "   all              Installs macros, symlinks, packages"
   echo "   macros           Apply macOS system defaults"
   echo "   packages         Installs package managers and packages"
   echo "   symlinks         Creates symlinks"
@@ -24,7 +24,6 @@ sub_all() {
   sub_symlinks
   sub_packages
   sub_macros
-  sub_extra
 }
 
 sub_macros () {

@@ -1,4 +1,10 @@
 [user]
 	name = Jimmy Carr
 	email = james.carr@zapier.com
-	signingkey = 4D8E2213
+	signingkey = ~/.ssh/id_zapier.pub
+
+[gpg]
+  format = ssh
+
+[core]
+  sshCommand = ssh -i ~/.ssh/id_zapier

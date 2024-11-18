@@ -9,19 +9,17 @@ brew upgrade &> /dev/null
 echo "Homebrew updated"
 
 packages=(
+  asdf
   autojump
   awscli
   direnv
   git
-  google-cloud-sdk
   httpie
-  nodenv
-  nodenv/nodenv/nodenv-aliases
-  nodenv/nodenv/nodenv-npm-migrate
+  jq
   pinentry
   pinentry-mac
+  pre-commit
   watchman
-  yarn
   zsh
 )
 
@@ -31,18 +29,21 @@ echo "Homebrew packages installed"
 
 apps=(
   1password
-  alfred
   bettertouchtool
+  bit-slicer
+  cursor
   docker
   firefox
   google-chrome
   iterm2
   kindle
-  microsoft-office
+  meetingbar
+  pritunl
   rectangle
   slack
-  viscosity
   visual-studio-code
+  vlc
+  zappy
   zoom
 )
 

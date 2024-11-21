@@ -34,9 +34,9 @@ sub_macros () {
 }
 
 sub_packages () {
-  for DEFAULTS_FILE in "${DOTFILES_DIR}"/packages/*.sh; do
-    echo "Installing ${DEFAULTS_FILE}" && . "${DEFAULTS_FILE}"
-  done
+  echo "Installing ${DOTFILES_DIR}/packages/homebrew.sh" && . "${DOTFILES_DIR}/packages/homebrew.sh"
+  echo "Installing ${DOTFILES_DIR}/packages/asdf.sh" && . "${DOTFILES_DIR}/packages/asdf.sh"
+  echo "Installing ${DOTFILES_DIR}/packages/zsh.sh" && . "${DOTFILES_DIR}/packages/zsh.sh"
   echo "Done. Some changes may require you to restart your terminal."
 }
 

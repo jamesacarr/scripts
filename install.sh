@@ -47,7 +47,13 @@ sub_symlinks () {
   ln -sfv $DOTFILES_DIR/git/gitconfig-zapier ~/.gitconfig-zapier
   ln -sfv $DOTFILES_DIR/git/gitignore-global ~/.gitignore-global
 
-  echo "Done."
+  echo "--- Creating wezterm symlinks"
+  mkdir -p ~/.config/wezterm
+  for WEZTERM_FILE in "${DOTFILES_DIR}"/wezterm/*.lua; do
+    ln -sfv "$WEZTERM_FILE" ~/.config/wezterm/$(basename "$WEZTERM_FILE")
+  done
+
+  echo "--- Done."
 }
 
 # Make sure to keep this in sync with the available public commands

@@ -1,5 +1,5 @@
 
-# <type>(<scope>): <subject>   Max 50 chars ---->|
+# <type>(<scope>): <desc>    Ideal 50 chars ---->|---Max 72 chars ---->|
 
 # COMMIT BODY                                        Max 72 chars ---->|
 
@@ -9,23 +9,48 @@
 # closes: #
 # see also: #
 
-# --- NOTES ---
-# Type can be:
-#    build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-#    ci: Changes to our CI configuration files and scripts (example scopes: Circle, BrowserStack, SauceLabs)
-#    docs: Documentation only changes
-#    feat: A new feature
-#    fix: A bug fix
-#    perf: A code change that improves performance
-#    refactor: A code change that neither fixes a bug nor adds a feature
-#    style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-#    test: Adding missing tests or correcting existing tests
-# --------------------
+# ----- END COMMIT MESSAGE -----
+#
+# Conventional Commits Cheatsheet (https://www.conventionalcommits.org)
+#
+# <type> indicates what kind of commit this is.
+#   - build       for changes in build system or environment
+#   - chore       for miscellaneous tasks
+#   - ci          for configuring continuous integration systems
+#   - docs        for changes in documentation only
+#   - feat        for new features introduced (i.e. MINOR in SemVer standard)
+#   - fix         for bug-fixes (i.e. PATCH in SemVer standard)
+#   - perf        for performance-enhancing refactors
+#   - refactor    for rewriting or restructuring of code that does not affect API behavior
+#   - revert      for reverting commits made previously
+#   - style       for changes in code styles and no changes in logic
+#   - test        for adding new tests or correcting defective tests
+#
+# <scope> describes a section of the codebase where this change is applied and is optional.
+# Note that allowed content of this section depends on the specific project.
+# Issue identifiers are not valid scopes.
+#
+# Inserting "!" before the colon indicates that this commit introduces a breaking change.
+# It is equivalent to a bump in MAJOR in SemVer standard.
+# With this, the breaking change indicator in <footer> becomes optional.
+#
+# <description> contains a concise description of the change.
+# The content should be in imperative mood, as if "This commit will..." is prepended.
+# Do not capitalize the beginning of the sentence, and full stop (.) is omitted.
+#
+# <body> provides additional contextual information about the code changes and is optional.
+# Multiple paragraphs separated by an empty line are allowed here.
+# Sentences should be in imperative mood with proper capitalization and full stops (.).
+#
+# <footer> is a list of key-value pairs that store "metadata" of a commit.
+# There are three types of a footer:
+#   - Breaking change indicator     verbatim "BREAKING CHANGE:", followed by a <description>
+#   - Automatic issue management    such as "Close #123", "Reference #123", "See #123", etc.
+#   - Email-like metadata           such as "Signed-off-by:", "Co-authored-by", etc.
+#
 # Remember to:
-#    Capitalize the subject line
 #    Use the imperative mood in the subject line
 #    Do not end the subject line with a period
 #    Separate subject from body with a blank line
 #    Use the body to explain what and why vs. how
 #    Can use multiple lines with "-" for bullet points in body
-# --------------------

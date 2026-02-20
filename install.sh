@@ -28,7 +28,9 @@ sub_all() {
 
 sub_macros () {
   for DEFAULTS_FILE in "${DOTFILES_DIR}"/macros/defaults*.sh; do
-    echo "--- Applying ${DEFAULTS_FILE}" && . "${DEFAULTS_FILE}"
+    if [ -f "$DEFAULTS_FILE" ]; then
+      echo "--- Applying ${DEFAULTS_FILE}" && . "${DEFAULTS_FILE}"
+    fi
   done
   echo "--- Done. Some changes may require a logout/restart to take effect."
 }
@@ -36,24 +38,43 @@ sub_macros () {
 sub_packages () {
   echo "--- Installing ${DOTFILES_DIR}/packages/homebrew.sh" && . "${DOTFILES_DIR}/packages/homebrew.sh"
   echo "--- Installing ${DOTFILES_DIR}/packages/mise.sh" && . "${DOTFILES_DIR}/packages/mise.sh"
-  echo "--- Installing ${DOTFILES_DIR}/packages/zsh.sh" && . "${DOTFILES_DIR}/packages/zsh.sh"
-  echo "--- Done. Some changes may require you to restart your terminal."
+  echo "--- Done"
 }
 
 sub_symlinks () {
   echo "--- Creating git symlinks"
-  ln -sfv $DOTFILES_DIR/git/git-commit-template ~/.git-commit-template
-  ln -sfv $DOTFILES_DIR/git/gitconfig ~/.gitconfig
-  ln -sfv $DOTFILES_DIR/git/gitconfig-zapier ~/.gitconfig-zapier
-  ln -sfv $DOTFILES_DIR/git/gitignore-global ~/.gitignore-global
+  for GIT_FILE in "${DOTFILES_DIR}"/git/*; do
+    if [ -f "$GIT_FILE" ]; then
+      ln -sfv "$GIT_FILE" ~/.$(basename "$GIT_FILE")
+    fi
+  done
 
   echo "--- Creating wezterm symlinks"
   mkdir -p ~/.config/wezterm
-  for WEZTERM_FILE in "${DOTFILES_DIR}"/wezterm/*.lua; do
-    ln -sfv "$WEZTERM_FILE" ~/.config/wezterm/$(basename "$WEZTERM_FILE")
+  for WEZTERM_FILE in "${DOTFILES_DIR}"/wezterm/*; do
+    if [ -f "$WEZTERM_FILE" ]; then
+      ln -sfv "$WEZTERM_FILE" ~/.config/wezterm/$(basename "$WEZTERM_FILE")
+    fi
   done
 
-  echo "--- Done."
+  echo "--- Creating zsh symlinks"
+  for ZSH_FILE in "${DOTFILES_DIR}"/zsh/*; do
+    if [ -f "$ZSH_FILE" ]; then
+      ln -sfv "$ZSH_FILE" ~/.$(basename "$ZSH_FILE")
+    fi
+  done
+
+  mkdir -p ~/.config/zsh
+  for ZSH_FILE in "${DOTFILES_DIR}"/zsh/config/*; do
+    if [ -f "$ZSH_FILE" ]; then
+      ln -sfv "$ZSH_FILE" ~/.config/zsh/$(basename "$ZSH_FILE")
+    fi
+  done
+
+  echo "--- Creating starship symlinks"
+  ln -sfv "${DOTFILES_DIR}/starship/starship.toml" ~/.config/starship.toml
+
+  echo "--- Done"
 }
 
 # Make sure to keep this in sync with the available public commands

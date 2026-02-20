@@ -5,7 +5,6 @@ echo "Downloading Homebrew..."
 echo "Download complete"
 
 packages=(
-  autojump
   awscli
   direnv
   git
@@ -15,8 +14,13 @@ packages=(
   pinentry
   pinentry-mac
   pre-commit
+  starship
   watchman
+  zoxide
   zsh
+  zsh-autosuggestions
+  zsh-history-substring-search
+  zsh-syntax-highlighting
 )
 
 echo "Installing ${packages[@]}..."

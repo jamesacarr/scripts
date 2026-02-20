@@ -7,10 +7,10 @@ local config = wezterm.config_builder()
 require("keys").setup(config)
 require("tabs").setup(config)
 
-config.color_scheme = 'Snazzy (Gogh)'
+config.color_scheme = 'OneHalfDark'
 config.command_palette_font_size = 14
 config.default_cursor_style = "SteadyUnderline"
-config.font = wezterm.font 'Menlo'
+config.font = wezterm.font 'MesloLGM Nerd Font Mono'
 config.font_size = 12
 config.macos_window_background_blur = 10
 config.scrollback_lines = 10000

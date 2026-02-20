@@ -1,0 +1,45 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   James Carr <james@jamescarr.dev>
+#
+
+# Source Homebrew
+test -f /opt/homebrew/bin/brew && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Source ZSH utils
+test -f $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh && source $_
+test -f $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh && source $_
+test -f $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh && source $_
+
+# Source direnv
+if command -v direnv 1>/dev/null 2>&1; then
+  eval "$(direnv hook zsh)"
+fi
+
+# Source mise
+if command -v mise 1>/dev/null 2>&1; then
+  eval "$(mise activate zsh)"
+fi
+
+# Source starship
+if command -v starship 1>/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
+
+# Source zoxide
+if command -v zoxide 1>/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
+
+# Source local configs
+config_dir="$HOME/.config/zsh"
+if [ -d "$config_dir" ]; then
+  for file in "${config_dir}/"*; do
+    if [ -f "$file" ]; then
+      source "$file"
+    fi
+  done
+fi
+unset config_dir

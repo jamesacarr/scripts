@@ -1,0 +1,160 @@
+# Get editor completions based on the config schema
+"$schema" = "https://starship.rs/config-schema.json"
+
+command_timeout = 1500
+
+[aws]
+symbol = " "
+
+[bun]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[crystal]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
+style = "bold blue"
+truncate_to_repo = false
+truncation_length = 3
+truncation_symbol = "…/"
+
+[docker_context]
+symbol = " "
+
+[gcloud]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[git_commit]
+tag_symbol = "  "
+
+[git_status]
+format = "([(*$conflicted$deleted$modified$renamed$staged$untracked) ](218))([($ahead_behind$stashed) ]($style))"
+style = "cyan"
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+conflicted = "​"
+deleted = "​"
+modified = "​"
+renamed = "​"
+staged = "​"
+untracked = "​"
+stashed = "≡"
+
+[golang]
+symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[kotlin]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nodejs]
+symbol = " "
+
+[ocaml]
+symbol = " "
+
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+AlmaLinux = " "
+Amazon = " "
+Android = " "
+AOSC = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Elementary = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Ios = "󰀷 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+RockyLinux = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+Zorin = " "
+
+[package]
+symbol = "󰏗 "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[status]
+symbol = " "
+
+[swift]
+symbol = " "
+
+[xmake]
+symbol = " "

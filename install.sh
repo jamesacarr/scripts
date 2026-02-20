@@ -18,7 +18,7 @@ sub_help () {
 
 sub_all() {
   # Update dotfiles before continuing
-  echo "Checking for latest dotfiles version"
+  echo "--- Checking for latest dotfiles version"
   [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
 
   sub_symlinks
@@ -28,20 +28,20 @@ sub_all() {
 
 sub_macros () {
   for DEFAULTS_FILE in "${DOTFILES_DIR}"/macros/defaults*.sh; do
-    echo "Applying ${DEFAULTS_FILE}" && . "${DEFAULTS_FILE}"
+    echo "--- Applying ${DEFAULTS_FILE}" && . "${DEFAULTS_FILE}"
   done
-  echo "Done. Some changes may require a logout/restart to take effect."
+  echo "--- Done. Some changes may require a logout/restart to take effect."
 }
 
 sub_packages () {
-  echo "Installing ${DOTFILES_DIR}/packages/homebrew.sh" && . "${DOTFILES_DIR}/packages/homebrew.sh"
-  echo "Installing ${DOTFILES_DIR}/packages/asdf.sh" && . "${DOTFILES_DIR}/packages/asdf.sh"
-  echo "Installing ${DOTFILES_DIR}/packages/zsh.sh" && . "${DOTFILES_DIR}/packages/zsh.sh"
-  echo "Done. Some changes may require you to restart your terminal."
+  echo "--- Installing ${DOTFILES_DIR}/packages/homebrew.sh" && . "${DOTFILES_DIR}/packages/homebrew.sh"
+  echo "--- Installing ${DOTFILES_DIR}/packages/mise.sh" && . "${DOTFILES_DIR}/packages/mise.sh"
+  echo "--- Installing ${DOTFILES_DIR}/packages/zsh.sh" && . "${DOTFILES_DIR}/packages/zsh.sh"
+  echo "--- Done. Some changes may require you to restart your terminal."
 }
 
 sub_symlinks () {
-  echo "Creating git symlinks"
+  echo "--- Creating git symlinks"
   ln -sfv $DOTFILES_DIR/git/git-commit-template ~/.git-commit-template
   ln -sfv $DOTFILES_DIR/git/gitconfig ~/.gitconfig
   ln -sfv $DOTFILES_DIR/git/gitconfig-zapier ~/.gitconfig-zapier

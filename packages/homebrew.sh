@@ -5,13 +5,13 @@ echo "Downloading Homebrew..."
 echo "Download complete"
 
 packages=(
-  asdf
   autojump
   awscli
   direnv
   git
   httpie
   jq
+  mise
   pinentry
   pinentry-mac
   pre-commit

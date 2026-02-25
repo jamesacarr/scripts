@@ -1,17 +1,26 @@
 [user]
 	name = James Carr
 	email = james@jamescarr.dev
-	signingkey = A79F57D8
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILcjyQFytZrb1VYgVES0GCMVCRTlB+CwOyJqFXI0/nnW
 
 [core]
 	excludesfile = ~/.gitignore-global
 
-[push]
-	default = upstream
-
 [commit]
 	gpgsign = true
 	template = ~/.git-commit-template
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = upstream
 
 [filter "lfs"]
 	clean = git-lfs clean %f
@@ -24,5 +33,3 @@
 
 [includeIf "gitdir:~/Git/zapier/"]
 	path = ~/.gitconfig-zapier
-[init]
-	defaultBranch = main

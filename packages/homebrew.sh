@@ -5,6 +5,7 @@ echo "Downloading Homebrew..."
 echo "Download complete"
 
 packages=(
+  1password-cli
   awscli
   direnv
   git

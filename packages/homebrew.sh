@@ -8,6 +8,7 @@ packages=(
   1password-cli
   awscli
   direnv
+  gh
   git
   httpie
   jq

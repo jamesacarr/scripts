@@ -32,4 +32,4 @@
 	autoupdate = true
 
 [includeIf "gitdir:~/Git/zapier/"]
-	path = ~/.gitconfig-zapier
+	path = ~/.gitconfig.zapier

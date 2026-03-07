@@ -1,8 +1,12 @@
 #!/bin/bash
 
-echo "Downloading Homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo "Download complete"
+if ! command -v brew &> /dev/null; then
+  echo "Downloading Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  echo "Download complete"
+else
+  echo "Homebrew already installed, skipping"
+fi
 
 packages=(
   1password-cli
@@ -26,7 +30,7 @@ packages=(
 )
 
 echo "Installing ${packages[@]}..."
-brew install "${packages[@]}" &> /dev/null
+brew install "${packages[@]}" > /dev/null
 echo "Homebrew packages installed"
 
 apps=(
@@ -50,9 +54,9 @@ apps=(
 )
 
 echo "Installing ${apps[@]}..."
-brew install --cask "${apps[@]}" &> /dev/null
+brew install --cask "${apps[@]}" > /dev/null
 echo "Homebrew apps installed"
 
 echo "Running brew cleanup..."
-brew cleanup &> /dev/null
+brew cleanup > /dev/null
 echo "Cleanup complete"

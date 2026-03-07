@@ -35,14 +35,8 @@ alias gbL='git branch --all --verbose'
 alias gbm='git branch --move'
 alias gbM='git branch --move --force'
 alias gbn='git symbolic-ref --short HEAD'
-alias gbr='git branch --move'
-alias gbR='git branch --move --force'
 alias gbs='git show-branch'
 alias gbS='git show-branch --all'
-alias gbv='git branch --verbose'
-alias gbV='git branch --verbose --verbose'
-alias gbx='git branch --delete'
-alias gbX='git branch --delete --force'
 
 # Commit (c)
 alias gc='git commit --verbose'
@@ -59,7 +53,6 @@ alias gcr='git revert'
 alias gcR='git reset "HEAD^"'
 alias gcs='git show'
 alias gcsS='git show --pretty=short --show-signature'
-alias gcl='git-commit-lost'
 alias gcy='git cherry --verbose --abbrev'
 alias gcY='git cherry --verbose'
 
@@ -139,21 +132,17 @@ alias gRm='git remote rename'
 alias gRu='git remote update'
 alias gRp='git remote prune'
 alias gRs='git remote show'
-alias gRb='git-hub-browse'
 
 # Stash (s)
 alias gs='git stash'
 alias gsa='git stash apply'
 alias gsx='git stash drop'
-alias gsX='git-stash-clear-interactive'
 alias gsl='git stash list'
-alias gsL='git-stash-dropped'
 alias gsd='git stash show --patch --stat'
 alias gsp='git stash pop'
-alias gsr='git-stash-recover'
-alias gss='git stash save --include-untracked'
-alias gsS='git stash save --patch --no-keep-index'
-alias gsw='git stash save --include-untracked --keep-index'
+alias gss='git stash push --include-untracked'
+alias gsS='git stash push --patch --no-keep-index'
+alias gsw='git stash push --include-untracked --keep-index'
 
 # Submodule (S)
 alias gS='git submodule'
@@ -162,10 +151,8 @@ alias gSf='git submodule foreach'
 alias gSi='git submodule init'
 alias gSI='git submodule update --init --recursive'
 alias gSl='git submodule status'
-alias gSm='git-submodule-move'
 alias gSs='git submodule sync'
 alias gSu='git submodule update --remote --recursive'
-alias gSx='git-submodule-remove'
 
 # Tag (t)
 alias gt='git tag'
@@ -219,3 +206,8 @@ alias yu='yarn upgrade'
 alias yui='yarn upgrade-interactive'
 alias yw='yarn workspace'
 alias ywr='yarn workspaces run'
+
+#
+# Obsidian
+#
+alias obsidian='Obsidian'

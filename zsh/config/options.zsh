@@ -25,3 +25,16 @@ setopt CDABLE_VARS          # Change directory to a path stored in a variable.
 setopt MULTIOS              # Write to multiple descriptors.
 unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
                             # Use >! and >>! to bypass.
+
+#
+# History
+#
+
+export HISTFILE="${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history"
+export HISTSIZE=10000
+export SAVEHIST=10000
+export HISTORY_IGNORE="*token*"
+
+setopt HIST_IGNORE_SPACE    # Don't record commands that start with a space.
+setopt HIST_IGNORE_DUPS     # Don't record duplicate consecutive commands.
+setopt SHARE_HISTORY        # Share history between all sessions.

@@ -19,7 +19,7 @@ sub_help () {
 sub_all() {
   # Update dotfiles before continuing
   echo "--- Checking for latest dotfiles version"
-  [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin master
+  [ -d "$DOTFILES_DIR/.git" ] && git --work-tree="$DOTFILES_DIR" --git-dir="$DOTFILES_DIR/.git" pull origin main
 
   sub_symlinks
   sub_packages

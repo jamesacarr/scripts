@@ -4,12 +4,12 @@ local wezterm = require 'wezterm'
 -- Configure the window
 local config = wezterm.config_builder()
 
-require("keys").setup(config)
-require("tabs").setup(config)
+require('keys').setup(config)
+require('tabs').setup(config)
 
 config.color_scheme = 'OneHalfDark'
 config.command_palette_font_size = 14
-config.default_cursor_style = "SteadyUnderline"
+config.default_cursor_style = 'SteadyUnderline'
 config.font = wezterm.font 'MesloLGM Nerd Font Mono'
 config.font_size = 12
 config.macos_window_background_blur = 10
@@ -23,7 +23,7 @@ config.window_frame = {
 
 -- Maximize the window on startup
 local mux = wezterm.mux
-wezterm.on("gui-startup", function()
+wezterm.on('gui-startup', function()
   local tab, pane, window = mux.spawn_window{}
   window:gui_window():maximize()
 end)

@@ -1,18 +1,18 @@
-local wezterm = require "wezterm"
+local wezterm = require('wezterm')
 
 local M = {}
 
 M.colors = {
-  background = "#212529",
-  foreground = "#ced4da",
-  background_active = "#343a40",
-  foreground_active = "#ced4da",
-  background_hover = "#495057",
-  foreground_hover = "#e9ecef",
-  background_claude = "#733924",
-  foreground_claude = "#f4f3ee",
-  background_claude_active = "#c15f3c",
-  foreground_claude_active = "#f4f3ee",
+  background = '#212529',
+  foreground = '#ced4da',
+  background_active = '#343a40',
+  foreground_active = '#ced4da',
+  background_hover = '#495057',
+  foreground_hover = '#e9ecef',
+  background_claude = '#733924',
+  foreground_claude = '#f4f3ee',
+  background_claude_active = '#c15f3c',
+  foreground_claude_active = '#f4f3ee',
 }
 
 -- Equivalent to POSIX basename(3)
@@ -23,26 +23,23 @@ function M.basename(s)
 end
 
 function M.claude_running(tab)
-  local is_claude_running = false
   for _, pane in ipairs(tab.panes) do
-    if pane.foreground_process_name:find("claude") then
-      is_claude_running = true
-      break
+    if pane.foreground_process_name:find('claude') then
+      return true
     end
   end
-
-  return is_claude_running
+  return false
 end
 
 M.icons = {
-  ["docker"] = wezterm.nerdfonts.md_docker,
-  ["docker-compose"] = wezterm.nerdfonts.md_docker,
-  ["git"] = wezterm.nerdfonts.md_git,
-  ["make"] = wezterm.nerdfonts.seti_makefile,
-  ["node"] = wezterm.nerdfonts.md_nodejs,
-  ["python"] = wezterm.nerdfonts.md_language_python,
-  ["bash"] = wezterm.nerdfonts.fa_terminal,
-  ["zsh"] = wezterm.nerdfonts.fa_terminal,
+  ['docker'] = wezterm.nerdfonts.md_docker,
+  ['docker-compose'] = wezterm.nerdfonts.md_docker,
+  ['git'] = wezterm.nerdfonts.md_git,
+  ['make'] = wezterm.nerdfonts.seti_makefile,
+  ['node'] = wezterm.nerdfonts.md_nodejs,
+  ['python'] = wezterm.nerdfonts.md_language_python,
+  ['bash'] = wezterm.nerdfonts.fa_terminal,
+  ['zsh'] = wezterm.nerdfonts.fa_terminal,
 }
 
 function M.setup(config)
@@ -81,7 +78,7 @@ function M.setup(config)
       local title = pane.title
 
       if M.icons[process] then
-        title = M.icons[process] .. " " .. title
+        title = M.icons[process] .. ' ' .. title
       end
 
       local is_zoomed = false
@@ -92,9 +89,9 @@ function M.setup(config)
         end
       end
       if is_zoomed then
-        title = wezterm.nerdfonts.md_magnify .. " " .. title
+        title = wezterm.nerdfonts.md_magnify .. ' ' .. title
       end
-      
+
       if M.claude_running(tab) then
         local background = M.colors.background_claude
         local foreground = M.colors.foreground_claude
@@ -110,9 +107,7 @@ function M.setup(config)
         }
       end
 
-      return {
-        { Text = ' ' .. title .. ' ' },
-      }
+      return { { Text = ' ' .. title .. ' ' } }
     end
   )
 end

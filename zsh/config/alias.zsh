@@ -179,35 +179,6 @@ alias ip='curl ipecho.net/plain; echo'
 alias ipl="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
 
 #
-# PNPM
-#
-alias pa='pnpm add'
-alias pd='pnpm dev'
-alias pi='pnpm install'
-alias pf='pnpm --filter'
-alias pr='pnpm remove'
-alias pt='pnpm test'
-alias ptc='pnpm test:coverage'
-alias ptw='pnpm test:watch'
-alias pu='pnpm upgrade'
-
-#
-# Yarn
-#
-alias ya='yarn add'
-alias yi='yarn install'
-alias ym='yarn run metrics'
-alias yr='yarn remove'
-alias ys='yarn start'
-alias yt='yarn run test'
-alias ytc='yarn run test:coverage'
-alias ytw='yarn run test:watch'
-alias yu='yarn upgrade'
-alias yui='yarn upgrade-interactive'
-alias yw='yarn workspace'
-alias ywr='yarn workspaces run'
-
-#
 # Obsidian
 #
 alias obsidian='Obsidian'

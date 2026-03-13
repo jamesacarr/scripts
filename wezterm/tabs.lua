@@ -13,6 +13,10 @@ M.colors = {
   foreground_claude = '#f4f3ee',
   background_claude_active = '#c15f3c',
   foreground_claude_active = '#f4f3ee',
+  background_pi = '#133f3f',
+  foreground_pi = '#f4f3ee',
+  background_pi_active = '#1a5c5c',
+  foreground_pi_active = '#f4f3ee',
 }
 
 -- Equivalent to POSIX basename(3)
@@ -25,6 +29,19 @@ end
 function M.claude_running(tab)
   for _, pane in ipairs(tab.panes) do
     if pane.foreground_process_name:find('claude') then
+      return true
+    end
+  end
+  return false
+end
+
+function M.pi_running(tab)
+  for _, pane in ipairs(tab.panes) do
+    -- pi is a #!/usr/bin/env node script, so WezTerm reports the foreground
+    -- process as 'node'. Check the pane title instead, which the shell's
+    -- preexec hook typically sets to the running command.
+    local title = pane.title or ''
+    if title:match('^π') then
       return true
     end
   end
@@ -98,6 +115,21 @@ function M.setup(config)
         if tab.is_active then
           background = M.colors.background_claude_active
           foreground = M.colors.foreground_claude_active
+        end
+
+        return {
+          { Background = { Color = background } },
+          { Foreground = { Color = foreground } },
+          { Text = ' ' .. title .. ' ' },
+        }
+      end
+
+      if M.pi_running(tab) then
+        local background = M.colors.background_pi
+        local foreground = M.colors.foreground_pi
+        if tab.is_active then
+          background = M.colors.background_pi_active
+          foreground = M.colors.foreground_pi_active
         end
 
         return {

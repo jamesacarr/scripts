@@ -12,6 +12,7 @@ packages=(
   1password-cli
   awscli
   direnv
+  fd
   gh
   git
   httpie
@@ -20,6 +21,7 @@ packages=(
   pinentry
   pinentry-mac
   pre-commit
+  ripgrep
   starship
   watchman
   zoxide

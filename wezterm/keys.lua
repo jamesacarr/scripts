@@ -31,6 +31,7 @@ function M.setup(config)
     { mods = M.mod, key = 'm', action = act.TogglePaneZoomState },
     { mods = M.mod, key = 'p', action = act.ActivateCommandPalette },
     { mods = M.mod, key = 'd', action = act.ShowDebugOverlay },
+    { mods = 'CTRL|SHIFT', key = 't', action = act.DisableDefaultAssignment },
   }
 
   config.mouse_bindings = {

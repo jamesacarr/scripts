@@ -13,6 +13,10 @@ M.colors = {
   foreground_claude = '#f4f3ee',
   background_claude_active = '#c15f3c',
   foreground_claude_active = '#f4f3ee',
+  background_codex = '#2a3f5f',
+  foreground_codex = '#f4f3ee',
+  background_codex_active = '#3f5f8f',
+  foreground_codex_active = '#f4f3ee',
   background_pi = '#133f3f',
   foreground_pi = '#f4f3ee',
   background_pi_active = '#1a5c5c',
@@ -29,6 +33,15 @@ end
 function M.claude_running(tab)
   for _, pane in ipairs(tab.panes) do
     if pane.foreground_process_name:find('claude') then
+      return true
+    end
+  end
+  return false
+end
+
+function M.codex_running(tab)
+  for _, pane in ipairs(tab.panes) do
+    if pane.foreground_process_name:find('codex') then
       return true
     end
   end
@@ -115,6 +128,21 @@ function M.setup(config)
         if tab.is_active then
           background = M.colors.background_claude_active
           foreground = M.colors.foreground_claude_active
+        end
+
+        return {
+          { Background = { Color = background } },
+          { Foreground = { Color = foreground } },
+          { Text = ' ' .. title .. ' ' },
+        }
+      end
+
+      if M.codex_running(tab) then
+        local background = M.colors.background_codex
+        local foreground = M.colors.foreground_codex
+        if tab.is_active then
+          background = M.colors.background_codex_active
+          foreground = M.colors.foreground_codex_active
         end
 
         return {

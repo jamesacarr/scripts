@@ -1,0 +1,13 @@
+[tools]
+bun = "latest"
+node = "24"
+"npm:@mariozechner/pi-coding-agent" = "latest"
+pnpm = "latest"
+
+[settings]
+
+[settings.node]
+default_packages_file = "/Users/jamescarr/.config/mise/default-npm-packages"
+
+[settings.npm]
+package_manager = "bun"

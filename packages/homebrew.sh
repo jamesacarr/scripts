@@ -39,6 +39,8 @@ apps=(
   1password
   bettertouchtool
   bit-slicer
+  claude-code@latest
+  codex
   cursor
   docker
   firefox
@@ -46,6 +48,7 @@ apps=(
   iterm2
   kindle
   meetingbar
+  nordvpn
   pritunl
   rectangle
   slack

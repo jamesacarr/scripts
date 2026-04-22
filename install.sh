@@ -83,6 +83,16 @@ sub_symlinks () {
   echo "--- Creating starship symlinks"
   ln -sfv "${DOTFILES_DIR}/starship/starship.toml" ~/.config/starship.toml
 
+  echo "--- Creating agent symlinks"
+  mkdir -p ~/.pi/agent ~/.codex ~/.claude
+  for AGENT_FILE in "${DOTFILES_DIR}"/agents/*; do
+    if [ -f "$AGENT_FILE" ]; then
+      ln -sfv "$AGENT_FILE" ~/.pi/agent/$(basename "$AGENT_FILE")
+      ln -sfv "$AGENT_FILE" ~/.codex/$(basename "$AGENT_FILE")
+      ln -sfv "$AGENT_FILE" ~/.claude/$(basename "$AGENT_FILE")
+    fi
+  done
+
   echo "--- Done"
 }
 

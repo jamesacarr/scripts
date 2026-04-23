@@ -10,6 +10,7 @@ fi
 
 packages=(
   1password-cli
+  agent-browser
   awscli
   direnv
   fd
@@ -46,7 +47,6 @@ apps=(
   firefox
   google-chrome
   iterm2
-  kindle
   meetingbar
   nordvpn
   pritunl

@@ -2,7 +2,6 @@
 
 echo "Installing node via mise..."
 {
-  mise install node@18
   mise install node@20
   mise install node@22
   mise install node@24

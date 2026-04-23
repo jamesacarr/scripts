@@ -13,6 +13,7 @@ sub_help () {
   echo "   all              Installs macros, symlinks, packages"
   echo "   macros           Apply macOS system defaults"
   echo "   packages         Installs package managers and packages"
+  echo "   post_install     Runs post-install setup for installed packages"
   echo "   symlinks         Creates symlinks"
 }
 
@@ -38,7 +39,12 @@ sub_macros () {
 sub_packages () {
   echo "--- Installing ${DOTFILES_DIR}/packages/homebrew.sh" && . "${DOTFILES_DIR}/packages/homebrew.sh"
   echo "--- Installing ${DOTFILES_DIR}/packages/mise.sh" && . "${DOTFILES_DIR}/packages/mise.sh"
+  sub_post_install
   echo "--- Done"
+}
+
+sub_post_install () {
+  echo "--- Running ${DOTFILES_DIR}/packages/post-install.sh" && . "${DOTFILES_DIR}/packages/post-install.sh"
 }
 
 sub_symlinks () {
@@ -98,7 +104,7 @@ sub_symlinks () {
 
 # Make sure to keep this in sync with the available public commands
 sub_completion () {
-  echo "help all macros packages symlinks"
+  echo "help all macros packages post_install symlinks"
 }
 
 case $COMMAND_NAME in

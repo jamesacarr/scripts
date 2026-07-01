@@ -15,6 +15,8 @@ M.smart_split = wezterm.action_callback(function(window, pane)
 end)
 
 function M.setup(config)
+  config.enable_kitty_keyboard = true
+
   config.keys = {
     -- General
     { mods = 'SHIFT', key = 'Enter', action = act.SendString('\n') },

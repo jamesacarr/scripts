@@ -14,6 +14,7 @@ config.font = wezterm.font 'MesloLGM Nerd Font Mono'
 config.font_size = 12
 config.macos_window_background_blur = 10
 config.scrollback_lines = 10000
+config.window_close_confirmation = 'NeverPrompt'
 config.window_background_opacity = 0.9
 config.window_decorations = 'RESIZE'
 config.window_frame = {

@@ -62,7 +62,6 @@ sub_symlinks () {
       ln -sfv "$MISE_FILE" ~/.config/mise/$(basename "$MISE_FILE")
     fi
   done
-  ln -sfv "$DOTFILES_DIR/packages/default-npm-packages" "$HOME/.config/mise/.default-npm-packages"
 
   echo "--- Creating wezterm symlinks"
   mkdir -p ~/.config/wezterm

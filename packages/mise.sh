@@ -7,7 +7,6 @@ echo "Installing node via mise..."
   mise install node@24
 } > /dev/null
 mise use -g node@24
-mise settings set node.default_packages_file "$HOME/.config/mise/.default-npm-packages"
 echo "Node installed"
 
 echo "Installing python via mise..."

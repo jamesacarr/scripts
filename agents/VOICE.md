@@ -1,14 +1,23 @@
-# Writing Voice - Platform Specific
+# Writing Voice
 
-Load when drafting for Slack, Jira, GitLab MRs, or GitHub PRs. Global writing rules live in `AGENTS.md`.
+Core voice rules (clarity, tightening, plain words, active voice) live in `AGENTS.md`. This file adds long-form structure and the platform adjustments below (Slack, Jira, GitLab MRs, GitHub PRs).
+
+## General Writing
+
+The tightening rules in `AGENTS.md` cover the word and sentence level. For long-form, add progressive disclosure - lead with the essential, layer detail below. Write all three and enforce the caps:
+
+| Layer | Purpose | Cap |
+| ----- | ------- | --- |
+| TLDR | What is this and why does it matter? | 2-3 sentences |
+| Summary | Key points, decisions, or recommendations | 2-3 paragraphs |
+| Detail | Full context, nuance, supporting info | 1-2 pages |
+
+A 30-second reader should get everything they need from the TLDR alone.
 
 ## Slack
 
-- Keep it short and lead with the point.
-- Use plain prose for short messages.
-- For longer messages, add structure only when it improves scanning or comprehension.
-- Use headings only when they describe real sections, not generic templates.
-- Use bullets or numbered lists only for actual enumeration.
+- Keep it short - Slack rewards brevity over completeness.
+- Default to plain prose; most messages need no headings or lists at all.
 - Tone should be casual, competent, and conversational.
 - Dry humour is fine when it fits. Do not force it.
 - Openers: team channels `Hey team :wave:`; DMs `Hey [Name]`.
@@ -23,13 +32,11 @@ Load when drafting for Slack, Jira, GitLab MRs, or GitHub PRs. Global writing ru
 - Describe behaviour changes explicitly, for example "Previously ..." and "Now ...".
 - Group secondary changes clearly instead of burying them.
 - Wrap identifiers, file paths, config keys, and literals in backticks when that improves readability.
-- Use subheadings only when the description covers distinct topics.
 - Testing or QA sections should be numbered steps a reviewer can follow.
 - Default to no emoji.
 
 ## Jira Tickets
 
-- Keep the tone neutral, technical, and concise.
 - Describe current behaviour and the problem clearly. Use "Currently, ..." framing when describing existing behaviour.
 - Include only the detail needed to understand, triage, or reproduce the issue.
 - No emoji.

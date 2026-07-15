@@ -14,3 +14,5 @@
 
 # Dependency directories
 node_modules/
+
+**/.claude/.cc-writes/

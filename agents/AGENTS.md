@@ -30,7 +30,7 @@ These rules apply to my own replies and to content I draft on your behalf. The g
 
 - Rule-of-three padding ("clear, concise, and effective") and "not X, but Y" antithesis where a plain statement works.
 - Hedging preambles ("it's worth noting that", "it's important to note", "that said", "keep in mind"). Delete them; state it directly.
-- Trivialising words ("just", "simply", "obviously", "of course"). They condescend or paper over real complexity.
+- Trivialising words ("just", "simply", "obviously", "of course") when they minimise effort or complexity ("just restart the pod"). Neutral uses are fine ("I just pushed the fix", "it's just a revert MR").
 - Closing paragraphs that restate what was just said.
 - Canned corporate phrasing; grovelling or overly deferential apologies.
 - "Just circling back", "Hope you're well", "Per my last message", "Just checking in".
@@ -50,17 +50,11 @@ These rules apply to my own replies and to content I draft on your behalf. The g
 
 ## Problem Solving
 
-- Match the depth of analysis to the size of the change. Do not do structured design analysis for small, local, low-risk, easily reversible changes.
-- Do structured design analysis before making changes that are hard to reverse, affect multiple components, modify shared abstractions, change data models, change public interfaces, or materially affect runtime characteristics or failure modes.
-- Before choosing an approach, identify at least one meaningfully different alternative. A different alternative must change the design, data flow, ownership, or trade-offs. A minor variation does not count.
-- Compare the real options against the relevant constraints: correctness, consistency with the existing system, complexity, reversibility, testability, and known upcoming requirements.
-- Critique your preferred option before committing to it. State the main assumptions it relies on, what it makes harder later, and the conditions where it is likely to fail.
-- If multiple options are viable, prefer the one that is easier to change, remove, or extend. A less reversible option can still be right if it is clearly better on the important constraints.
-- Do not choose an option just because it looks simpler. Choose the simplest option that is still correct and holds up under scrutiny.
-- When recommending an approach, briefly state what alternatives you considered, why you rejected them, and why the selected approach is the best fit.
-- If I explicitly tell you which approach to use, use it. Do not generate alternatives just to satisfy process. Only raise concerns if you see a concrete risk, constraint conflict, or likely failure mode.
-- Do not apply this process mechanically.
-- Do not use human-duration estimates as a heuristic when planning or comparing implementation approaches. They are not a reliable proxy for agent cost, difficulty, or suitability.
+- Match the depth of analysis to the size of the change. Do structured design analysis before changes that are hard to reverse, affect multiple components, modify shared abstractions, change data models or public interfaces, or materially affect runtime characteristics or failure modes. Skip it for small, local, easily reversible changes.
+- For changes that warrant analysis, consider at least one meaningfully different alternative - different design, data flow, ownership, or trade-offs, not a minor variation - and critique your preferred option before committing: the assumptions it relies on, what it makes harder later, and where it is likely to fail.
+- When recommending an approach, briefly state the alternatives you rejected and why. If options are otherwise close, prefer the one that is easier to change, remove, or extend.
+- If I explicitly tell you which approach to use, use it. Only raise concerns for a concrete risk, constraint conflict, or likely failure mode.
+- Do not use human-duration estimates when planning or comparing implementation approaches. They are not a reliable proxy for agent cost, difficulty, or suitability.
 
 ## Code Quality
 
@@ -73,7 +67,7 @@ After making code changes, run the project's lint and typecheck commands. Discov
 
 ## Debugging
 
-- If you're about to change code because something isn't working (including "quick fixes" and "let me just change X"), STOP and use `debug-code` first
+- If you're about to change code because something isn't working, STOP and use `debug-code` first. The urge to make a "quick fix" is the trigger, not an exemption - that instinct is exactly what skips root-cause investigation. No failure is too small to qualify
 - Investigate root causes before proposing fixes. If your first instinct is a workaround, say so and dig deeper. Symptom fixes mask the real problem and create new ones
 
 ## API & Library Usage
@@ -90,11 +84,6 @@ After making code changes, run the project's lint and typecheck commands. Discov
 
 - NEVER use `--no-gpg-sign`
 - Worktree path: `../{current-dir-name}-{sanitized-branch}` (replace non-alphanumeric/dash with `-`, collapse consecutive `-`, trim leading/trailing `-`)
-
-## Bash
-
-- One command per Bash tool call. Never chain with `&&`, `;`, or `||`. Parallelise independent commands; sequence dependent ones
-- ALWAYS use single quotes. Double quotes ONLY when variable expansion or command substitution is required
 
 ## Tooling
 

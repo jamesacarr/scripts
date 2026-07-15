@@ -4,7 +4,7 @@ Core voice rules (clarity, tightening, plain words, active voice) live in `AGENT
 
 ## General Writing
 
-The tightening rules in `AGENTS.md` cover the word and sentence level. For long-form, add progressive disclosure - lead with the essential, layer detail below. Write all three and enforce the caps:
+The tightening rules in `AGENTS.md` cover the word and sentence level. For standalone documents longer than about a page (proposals, design docs, announcements), add progressive disclosure - lead with the essential, layer detail below. Write all three layers and enforce the caps. Shorter content and the platform formats below follow their own rules; do not scaffold layers onto them.
 
 | Layer | Purpose | Cap |
 | ----- | ------- | --- |
@@ -24,6 +24,7 @@ A 30-second reader should get everything they need from the TLDR alone.
 - Emoji should be sparse and only where they help the tone. Match what is already used in the channel rather than reaching for generic ones like `:+1:` or `:rocket:`. Do not use them inside technical analysis.
 - No sign-off.
 - Corrections should be explicit follow-ups, not silent rewrites.
+- Tone benchmark: "I'd also recommend having a solid rollback strategy in place for if something goes wrong, even if it's just a revert MR ready to go. Pretty much every time I touched that code, something broke."
 
 ## MR/PR Descriptions
 

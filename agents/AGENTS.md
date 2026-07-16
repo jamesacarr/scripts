@@ -85,6 +85,14 @@ After making code changes, run the project's lint and typecheck commands. Discov
 - NEVER use `--no-gpg-sign`
 - Worktree path: `../{current-dir-name}-{sanitized-branch}` (replace non-alphanumeric/dash with `-`, collapse consecutive `-`, trim leading/trailing `-`)
 
+## MR / PR Size
+
+Keep each MR under ~300 lines of production code - the cap protects review attention, so count what a reviewer must scrutinise. Tests, renames/moves, lockfiles, and generated files don't count - never thin tests or skip an extraction to fit the cap.
+
+- Plan the split before committing. Seam order: preparatory refactor (moves, renames, extractions - no behaviour change) in its own MR, then the core change with its tests, then trailing incidental fixes (e.g. message wording).
+- Every MR in a stack must merge cleanly and leave the codebase working without the later ones.
+- Exceed the cap only when no clean seam exists; say why in the MR description.
+
 ## Tooling
 
 - CLI tools. GitHub: `gh` | GitLab: `glab` | Jira: `jira`

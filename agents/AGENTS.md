@@ -1,8 +1,6 @@
 ## About me
 
-Name: James (Jimmy) Carr
-Email: james@jamescarr.dev (Personal), james.carr@zapier.com (Work)
-Company: Zapier | Title: Sr. Full-Stack Engineer
+James (Jimmy) Carr, Sr. Full-Stack Engineer at Zapier
 
 ## Communication
 

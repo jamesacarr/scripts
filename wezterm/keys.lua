@@ -15,13 +15,11 @@ M.smart_split = wezterm.action_callback(function(window, pane)
 end)
 
 function M.setup(config)
-  config.enable_kitty_keyboard = true
-
   config.keys = {
     -- General
     { mods = 'SHIFT', key = 'Enter', action = act.SendString('\n') },
-    { mods = 'SUPER', key = 'LeftArrow', action = act { SendString = '\x1bOH' } },
-    { mods = 'SUPER', key = 'RightArrow', action = act { SendString = '\x1bOF' } },
+    { mods = 'SUPER', key = 'LeftArrow', action = act { SendKey = { mods = 'CTRL', key = 'a' } } },
+    { mods = 'SUPER', key = 'RightArrow', action = act { SendKey = { mods = 'CTRL', key = 'e' } } },
     { mods = 'OPT', key = 'LeftArrow', action = act { SendString = '\x1bb' } },
     { mods = 'OPT', key = 'RightArrow', action = act { SendString = '\x1bf' } },
     -- Splits

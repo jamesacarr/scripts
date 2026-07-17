@@ -93,7 +93,7 @@ Keep each MR under ~300 lines of production code - the cap protects review atten
 
 ## Tooling
 
-- CLI tools. GitHub: `gh` | GitLab: `glab` | Jira: `jira`
+- CLI tools. GitHub: `gh` | GitLab: `glab` | Jira: `jira` | Linear: `linear`
 - Prefer makefile targets and package.json scripts over direct tool invocation
 - Detect and use the project's package manager from its lock file. If no lock file exists, default to `pnpm`
 

@@ -14,7 +14,7 @@ James (Jimmy) Carr, Sr. Full-Stack Engineer at Zapier
 
 ## Writing Voice
 
-These rules apply to my own replies and to content I draft on your behalf. The gate: if a draft wouldn't pass as writing I'd send myself, revise it. `VOICE.md` adds long-form structure and platform adjustments for Slack, Jira, GitLab MRs, and GitHub PRs; load it when drafting more than a few sentences or for those platforms.
+These rules apply to my own replies and to content I draft on your behalf. The gate: if a draft wouldn't pass as writing I'd send myself, revise it. `VOICE.md` adds drafting discipline, long-form structure, and platform adjustments for Slack, Jira, GitLab MRs, and GitHub PRs; load it when drafting more than a few sentences or for those platforms.
 
 ### What matters most (check these first)
 
@@ -50,6 +50,8 @@ These rules apply to my own replies and to content I draft on your behalf. The g
 
 - Match the depth of analysis to the size of the change. Do structured design analysis before changes that are hard to reverse, affect multiple components, modify shared abstractions, change data models or public interfaces, or materially affect runtime characteristics or failure modes. Skip it for small, local, easily reversible changes.
 - For changes that warrant analysis, consider at least one meaningfully different alternative - different design, data flow, ownership, or trade-offs, not a minor variation - and critique your preferred option before committing: the assumptions it relies on, what it makes harder later, and where it is likely to fail.
+- Every option set must include the smallest change that could correctly fix the problem - often a guard or a single check rather than a new capability, parameter, or abstraction. First designs skew toward adding surface; the minimal option keeps that visible.
+- When a ticket or prompt lists candidate solutions, treat the list as input, not the option space: consider at least one credible alternative from outside it before recommending.
 - When recommending an approach, briefly state the alternatives you rejected and why. If options are otherwise close, prefer the one that is easier to change, remove, or extend.
 - If I explicitly tell you which approach to use, use it. Only raise concerns for a concrete risk, constraint conflict, or likely failure mode.
 - Do not use human-duration estimates when planning or comparing implementation approaches. They are not a reliable proxy for agent cost, difficulty, or suitability.
@@ -67,6 +69,11 @@ After making code changes, run the project's lint and typecheck commands. Discov
 
 - If you're about to change code because something isn't working, STOP and use `debug-code` first. The urge to make a "quick fix" is the trigger, not an exemption - that instinct is exactly what skips root-cause investigation. No failure is too small to qualify
 - Investigate root causes before proposing fixes. If your first instinct is a workaround, say so and dig deeper. Symptom fixes mask the real problem and create new ones
+
+## Blockers
+
+- Failures are yours; blockers are mine. Fix failing code, tests, and lint. For credential, auth, or environment blockers (unresolved tokens, expired logins, missing access), stop and tell me what's blocked and what to run - working around them wastes effort and hides the real state.
+- Never substitute a weaker check when the intended one fails and report the result as passing. State exactly what you could not run and why.
 
 ## API & Library Usage
 
@@ -94,6 +101,7 @@ Keep each MR under ~300 lines of production code - the cap protects review atten
 ## Tooling
 
 - CLI tools. GitHub: `gh` | GitLab: `glab` | Jira: `jira` | Linear: `linear`
+- Use the matching skill (use-gh, use-glab, use-jira, use-linear) for these tools' operations rather than ad-hoc CLI calls - the skills carry flags and environment quirks that raw invocations keep rediscovering
 - Prefer makefile targets and package.json scripts over direct tool invocation
 - Detect and use the project's package manager from its lock file. If no lock file exists, default to `pnpm`
 

@@ -1,6 +1,15 @@
 # Writing Voice
 
-Core voice rules (clarity, tightening, plain words, active voice) live in `AGENTS.md`. This file adds long-form structure and the platform adjustments below (Slack, Jira, GitLab MRs, GitHub PRs).
+Core voice rules (clarity, tightening, plain words, active voice) live in `AGENTS.md`. This file adds drafting discipline, long-form structure, and the platform adjustments below (Slack, Jira, GitLab MRs, GitHub PRs). It applies to anything written in my voice or under my name - reviews, feedback, docs, and messages included - not only the platforms listed.
+
+## Drafting Discipline
+
+Voice rules reliably pass an audit but fail during generation, so build the audit into drafting:
+
+- Before drafting for a form or tool, ask for the audience and any length or character caps. Draft to fit; don't trim after.
+- Before presenting a draft, check it against the AGENTS.md voice rules: search the text for em/en dashes, then scan for AI tells ("not X, but Y", rule-of-three padding).
+- When revising, present the delta, not the whole document, and list anything removed so nothing is dropped silently.
+- Draft substance only from what I've actually said. If I haven't expressed a view, ask - don't compose one for me. Never state or imply my contribution beyond what I've confirmed.
 
 ## General Writing
 

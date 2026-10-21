@@ -21,7 +21,8 @@
 	defaultBranch = main
 
 [push]
-	default = upstream
+	default = simple
+	autoSetupRemote = true
 
 [filter "lfs"]
 	clean = git-lfs clean %f
@@ -34,3 +35,5 @@
 
 [includeIf "gitdir:~/Git/zapier/"]
 	path = ~/.gitconfig.zapier
+[branch]
+	autoSetupMerge = simple
